@@ -25,14 +25,14 @@ export class HomeComponent {
   ngOnInit() {
         this.generateData();
   }
-
-  
-
+ 
   LAYER_OSM = {
     id: "openstreetmap",
     enabled: false,
     layer: L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 18
+      maxZoom: 20,
+      zoomSnap: 0,
+      zoomDelta: 1
     })
   }; 
 
@@ -41,7 +41,7 @@ export class HomeComponent {
     "Open Street Map": this.LAYER_OSM.layer
   };
   options = {
-    zoom: 14,
+    zoom: 15,
     center: L.latLng(41.0090329, 28.9716212)
   };
   generateData() {
@@ -69,4 +69,25 @@ export class HomeComponent {
       
     this.markerClusterGroup = group;
   }
+
+  initMap(map) {
+    const ZoomViewer = L.Control.extend({
+      onAdd: function(){ 
+        const container= L.DomUtil.create('div');
+        const  gauge = L.DomUtil.create('div');
+        container.style.width = '200px';
+        container.style.background = 'rgba(255,255,255,1)';
+        container.style.textAlign = 'left';
+        map.on('zoomstart zoom zoomend', function(ev){
+          gauge.innerHTML = 'Zoom level: ' + map.getZoom();
+        })
+        container.appendChild(gauge);
+  
+        return container;
+      }
+    });
+  
+    (new ZoomViewer).addTo(map);
+  }
+
 }

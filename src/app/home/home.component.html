@@ -8,5 +8,6 @@
   [leafletMarkerCluster]="markerClusterData"
   [leafletMarkerClusterOptions]="markerClusterOptions"
   
+  (leafletMapReady)="initMap($event)"
   (leafletMarkerClusterReady)="markerClusterReady($event)"
 ></div>
