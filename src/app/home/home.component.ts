@@ -68,7 +68,7 @@ export class HomeComponent {
 
   markerClusterReady(group: L.MarkerClusterGroup) {
     // console.log(group);
-    group.options.disableClusteringAtZoom = 17;
+    group.options.disableClusteringAtZoom = 18;
     this.markerClusterGroup = group;
 
   }
