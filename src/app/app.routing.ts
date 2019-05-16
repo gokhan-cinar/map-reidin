@@ -1,4 +1,3 @@
-import { MarkerClusterComponent } from './marker-cluster/marker-cluster.component';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home';
@@ -14,10 +13,6 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent
-    },
-    {
-        path: 'cluster',
-        component: MarkerClusterComponent
     },
 
     // otherwise redirect to home

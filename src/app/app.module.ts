@@ -13,8 +13,7 @@ import { routing } from './app.routing';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { MarkerClusterComponent } from './marker-cluster/marker-cluster.component';
+import { LoginComponent } from './login'; 
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -38,7 +37,6 @@ registerLocaleData(en);
         AppComponent,
         HomeComponent,
         LoginComponent,
-        MarkerClusterComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

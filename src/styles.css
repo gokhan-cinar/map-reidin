@@ -43,3 +43,6 @@ body {
 .header-wrapper small i {
     padding-right: 5px;
 }
+/* .leaflet-marker-pane img {
+  opacity: 0 !important;
+} */
